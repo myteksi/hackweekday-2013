@@ -5,21 +5,24 @@ Please get your access token from us
 
 
 #### Sending alert
-URL: `/api/public/v1/alers/sos/`
+POST: `/api/public/v1/alerts/sos/`
 
 Request header:
 ```
-  Something should go in here ...
+  Content-Type: application/json
+  mts-public-key: "AXCTU8732HDBCJ8482XHJDFHJJ"
 ```
 
 Request parameters:
 ```
 {
-  message: "Hello there"
+    "message": "Hello there"
+  , "latitude": 3.10000
+  , "longitude": 100.1000
 }
 ```
 
-Response:
+Responses:
 
 Success
 ```
@@ -28,6 +31,7 @@ Success
 }
 ```
 
+Failure
 ```
 {
     "status": 400
