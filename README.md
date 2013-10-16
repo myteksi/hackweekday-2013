@@ -1,43 +1,49 @@
 ## HACKWEEKDAY 2013 16th - 17th Oct 2013
 
 ### MyTeksi API
-Please get your access token from us
+Please get your public key from us
 
+**HOST**: test.grabtaxi.com
 
 #### Sending alert
-POST: `/api/public/v1/alerts/sos/`
+**POST**: `/api/public/v1/alerts/sos/`
 
-Request header:
+**Request header**:
 ```
   Content-Type: application/json
   mts-public-key: "AXCTU8732HDBCJ8482XHJDFHJJ"
 ```
 
-Request parameters:
+**Request parameters**:
 ```
 {
-    "message": "Hello there"
+    "title": "Please help!"
+  , "message": "Help me please, there's too much goat cheese in my salad!"
   , "latitude": 3.10000
   , "longitude": 100.1000
 }
 ```
 
-Responses:
+**Responses**:
 
-Success
+**Success**
 ```
 {
     "status": 200
+  , "code": 2001
+  , "property": ""
+  , "message": "Success"
+  , "developerMessage": "No problems found :)"
 }
 ```
 
-Failure
+**Failure**
 ```
 {
     "status": 400
-  , "code": 4003
-  , "property": ""
-  , "message": ""
-  , "developerMessage": ""
+  , "code": 4001
+  , "property": "title"
+  , "message": "Unable to process your request"
+  , "developerMessage": "Looks like the parameter 'title' is missing"
 }
 ```
