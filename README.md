@@ -5,7 +5,7 @@ Please get your access token from us
 
 
 #### Sending alert
-URL: `/api/public/v1/notify/`
+URL: `/api/public/v1/alers/sos/`
 
 Request header:
 ```
@@ -14,10 +14,20 @@ Request header:
 
 Request parameters:
 ```
-  Something should go in here ...
+{
+  message: "Hello there"
+}
 ```
 
 Response:
+
+Success
+```
+{
+    "status": 200
+}
+```
+
 ```
 {
     "status": 400
